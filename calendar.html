@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>jQuery UI Dialog - Modal confirmation</title>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="/resources/demos/style.css">
+  <script src="dist/sweetalert-dev.js"></script>
+  <link rel="stylesheet" href="dist/sweetalert.css">
+  <script>
+   function show_message(){
+             swal({   title: "Are you sure?",   
+                      text: "You will not be able to recover this imaginary file!",  
+                      type: "warning",  
+                      showCancelButton: true,  
+                      confirmButtonColor: "#DD6B55",   
+                      confirmButtonText: "Yes, delete it!",   
+                      cancelButtonText: "No, cancel plx!",   
+                      closeOnConfirm: false,  
+                      closeOnCancel: false }, 
+                      function(isConfirm){  
+                       if (isConfirm) 
+                        {    
+                         swal("Deleted!", "Your imaginary file has been deleted.", "success");
+                        } 
+                        else{     
+                          swal("Cancelled", "Your imaginary file is safe :)", "error");  
+                           } });
+   }
+  </script>
+</head>
+<body>
+ 
+        <button onclick="show_message()">Show Message</button>
+</div>
+</body>
+</html>
